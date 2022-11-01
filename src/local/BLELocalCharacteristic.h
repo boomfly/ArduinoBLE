@@ -70,7 +70,7 @@ protected:
   unsigned int descriptorCount() const;
   BLELocalDescriptor* descriptor(unsigned int index) const;
 
-  void readValue(BLEDevice device, uint16_t offset, uint8_t value[], int length);
+  virtual void readValue(BLEDevice device, uint16_t offset, uint8_t value[], int length);
   void writeValue(BLEDevice device, const uint8_t value[], int length);
   void writeCccdValue(BLEDevice device, uint16_t value);
 

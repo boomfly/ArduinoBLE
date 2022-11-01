@@ -259,6 +259,17 @@ int BLEDevice::rssi()
   return _rssi;
 }
 
+int BLEDevice::mtu()
+{
+  uint16_t handle = ATT.connectionHandle(_addressType, _address);
+
+  if (handle != 0xffff) {
+    return ATT.mtu(handle);
+  }
+
+  return _mtu;
+}
+
 bool BLEDevice::connect()
 {
   return ATT.connect(_addressType, _address);

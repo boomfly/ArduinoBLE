@@ -68,6 +68,7 @@ public:
   int manufacturerData(uint8_t value[], int length) const;
 
   virtual int rssi();
+  virtual int mtu();
 
   bool connect();
   bool discoverAttributes();
@@ -116,6 +117,7 @@ private:
   uint8_t _eirDataLength;
   uint8_t _eirData[31 * 2];
   int8_t _rssi;
+  uint16_t _mtu;
 };
 
 #endif
